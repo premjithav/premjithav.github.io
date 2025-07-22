@@ -1,14 +1,69 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Please wait</title>
-  <!-- Redirecting to another page using meta tag -->
-  <meta http-equiv="refresh" content="1; url =https://docs.google.com/document/d/1P2C4Yt59J8iUBEU6K0jcvPAonIJ70aLvHUB-AAP80_E/edit?usp=sharing" />
+  <meta charset="UTF-8">
+  <title>GitHub Gist Notepad</title>
 </head>
+<body>
 
-<body>  
-  <p>Please wait  </p>
+<h2>Cloud Notepad via GitHub Gist</h2>
+
+<textarea id="notepad" style="width:100%; height:300px;" placeholder="Type here..."></textarea><br>
+
+<button onclick="createGist()">Save to Gist</button>
+<button onclick="loadGist()">Load Gist by ID</button>
+
+<br><br>
+<input type="text" id="gistId" placeholder="Enter Gist ID to load" style="width:300px;">
+<p id="output"></p>
+
+<script>
+const token = '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';  // Replace with your GitHub token
+
+function createGist() {
+  const content = document.getElementById('notepad').value;
+  const data = {
+    "description": "Cloud Notepad Entry",
+    "public": true,
+    "files": {
+      "note.txt": { "content": content }
+    }
+  };
+
+  fetch('https://api.github.com/gists', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'token ' + token,
+      'Accept': 'application/vnd.github.v3+json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('output').innerHTML = `✅ Gist created! <a href="${data.html_url}" target="_blank">${data.id}</a>`;
+  });
+}
+
+function loadGist() {
+  const gistId = document.getElementById('gistId').value.trim();
+  if (!gistId) {
+    alert('Enter a Gist ID!');
+    return;
+  }
+
+  fetch(`https://api.github.com/gists/${gistId}`)
+    .then(response => response.json())
+    .then(data => {
+      const file = data.files['note.txt'];
+      if (file) {
+        document.getElementById('notepad').value = file.content;
+        document.getElementById('output').innerText = '✅ Gist loaded!';
+      } else {
+        document.getElementById('output').innerText = '❗ "note.txt" not found in Gist!';
+      }
+    });
+}
+</script>
+
 </body>
-
 </html>
