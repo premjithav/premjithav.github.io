@@ -2,31 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GitHub Gist Notepad</title>
+  <title>My Cloud Gist Notepad</title>
 </head>
 <body>
 
-<h2>Cloud Notepad via GitHub Gist</h2>
+<h2>Cloud Notepad (GitHub Gist)</h2>
 
-<textarea id="notepad" style="width:100%; height:300px;" placeholder="Type here..."></textarea><br>
+<textarea id="noteInput" style="width:100%; height:150px;" placeholder="Type your note here..."></textarea><br>
+<button onclick="addNewGist()">➕ Add Gist</button>
 
-<button onclick="createGist()">Save to Gist</button>
-<button onclick="loadGist()">Load Gist by ID</button>
-
-<br><br>
-<input type="text" id="gistId" placeholder="Enter Gist ID to load" style="width:300px;">
-<p id="output"></p>
+<h3>📄 My Added Gists</h3>
+<ul id="gistList"></ul>
 
 <script>
-const token = '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';  // Replace with your GitHub token
+const token = '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'; // Replace with your GitHub Token
 
-function createGist() {
-  const content = document.getElementById('notepad').value;
+function addNewGist() {
+  const content = document.getElementById('noteInput').value.trim();
+  if (!content) {
+    alert('Please enter some text!');
+    return;
+  }
+
   const data = {
-    "description": "Cloud Notepad Entry",
-    "public": true,
-    "files": {
-      "note.txt": { "content": content }
+    description: 'Cloud Notepad Entry',
+    public: true,
+    files: {
+      "note.txt": { content: content }
     }
   };
 
@@ -39,29 +41,36 @@ function createGist() {
     body: JSON.stringify(data)
   })
   .then(response => response.json())
-  .then(data => {
-    document.getElementById('output').innerHTML = `✅ Gist created! <a href="${data.html_url}" target="_blank">${data.id}</a>`;
+  .then(gist => {
+    if (gist.id) {
+      appendGistToList(gist);
+      document.getElementById('noteInput').value = '';
+    } else {
+      alert('Error creating gist!');
+    }
+  })
+  .catch(err => {
+    alert('Error: ' + err);
   });
 }
 
-function loadGist() {
-  const gistId = document.getElementById('gistId').value.trim();
-  if (!gistId) {
-    alert('Enter a Gist ID!');
-    return;
-  }
+function appendGistToList(gist) {
+  const fileContent = gist.files['note.txt'].content;
+  const li = document.createElement('li');
+  li.innerHTML = `<a href="${gist.html_url}" target="_blank">${gist.id}</a>: 
+                   <pre style="background:#f0f0f0; padding:5px;">${escapeHtml(fileContent)}</pre>`;
+  document.getElementById('gistList').prepend(li);
+}
 
-  fetch(`https://api.github.com/gists/${gistId}`)
-    .then(response => response.json())
-    .then(data => {
-      const file = data.files['note.txt'];
-      if (file) {
-        document.getElementById('notepad').value = file.content;
-        document.getElementById('output').innerText = '✅ Gist loaded!';
-      } else {
-        document.getElementById('output').innerText = '❗ "note.txt" not found in Gist!';
-      }
-    });
+function escapeHtml(text) {
+  var map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 }
 </script>
 
