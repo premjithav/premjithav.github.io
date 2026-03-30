@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bengaluru & Mysuru Family Trip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6EF;
+    --warm-white: #FDF9F4;
+    --sand: #E8DDD0;
+    --terracotta: #C4714A;
+    --terracotta-light: #E8956D;
+    --terracotta-pale: #F5E4D8;
+    --forest: #3A5A40;
+    --forest-light: #4E7957;
+    --forest-pale: #D4E6D8;
+    --midnight: #1A1A2E;
+    --ink: #2D2D2D;
+    --muted: #7A7065;
+    --gold: #C9932A;
+    --gold-pale: #FDF0D5;
+    --blue: #3B6FA0;
+    --blue-pale: #D9E8F5;
+    --card-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 12px 40px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–cream);
+color: var(–ink);
+line-height: 1.6;
+overflow-x: hidden;
+}
+
+/* ─── HEADER ─────────────────────────────── */
+.hero {
+position: relative;
+min-height: 100svh;
+background: linear-gradient(160deg, #1A1A2E 0%, #2C3E50 40%, #3A5A40 100%);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 2rem 1.5rem;
+overflow: hidden;
+}
+
+.hero::before {
+content: ‘’;
+position: absolute; inset: 0;
+background:
+radial-gradient(ellipse at 20% 50%, rgba(196,113,74,0.18) 0%, transparent 60%),
+radial-gradient(ellipse at 80% 20%, rgba(58,90,64,0.3) 0%, transparent 55%),
+radial-gradient(ellipse at 60% 80%, rgba(59,111,160,0.15) 0%, transparent 50%);
+}
+
+.hero-pattern {
+position: absolute; inset: 0;
+background-image:
+repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255,255,255,0.015) 30px, rgba(255,255,255,0.015) 31px),
+repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(255,255,255,0.015) 30px, rgba(255,255,255,0.015) 31px);
+}
+
+.hero-badge {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+background: rgba(255,255,255,0.1);
+border: 1px solid rgba(255,255,255,0.2);
+border-radius: 100px;
+padding: 0.4rem 1.1rem;
+color: #F0C882;
+font-size: 0.75rem;
+font-weight: 500;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+margin-bottom: 1.5rem;
+backdrop-filter: blur(8px);
+position: relative;
+z-index: 1;
+animation: fadeUp 0.8s ease both;
+}
+
+.hero-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: clamp(2.4rem, 8vw, 5rem);
+color: #FEFCF8;
+line-height: 1.1;
+margin-bottom: 0.5rem;
+position: relative;
+z-index: 1;
+animation: fadeUp 0.8s 0.15s ease both;
+}
+
+.hero-title em {
+font-style: italic;
+color: #E8956D;
+}
+
+.hero-subtitle {
+font-size: 1rem;
+color: rgba(255,255,255,0.65);
+margin-bottom: 2.5rem;
+position: relative;
+z-index: 1;
+animation: fadeUp 0.8s 0.25s ease both;
+letter-spacing: 0.03em;
+}
+
+.hero-meta {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 0.75rem;
+position: relative;
+z-index: 1;
+animation: fadeUp 0.8s 0.35s ease both;
+}
+
+.meta-pill {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+background: rgba(255,255,255,0.1);
+border: 1px solid rgba(255,255,255,0.15);
+border-radius: 12px;
+padding: 0.6rem 1rem;
+color: rgba(255,255,255,0.9);
+font-size: 0.82rem;
+backdrop-filter: blur(8px);
+}
+
+.meta-pill .icon { font-size: 1.1rem; }
+
+.hero-scroll {
+position: absolute;
+bottom: 2rem;
+left: 50%;
+transform: translateX(-50%);
+z-index: 2;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.4rem;
+color: rgba(255,255,255,0.4);
+font-size: 0.7rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+animation: fadeUp 0.8s 0.6s ease both;
+}
+
+.scroll-line {
+width: 1px;
+height: 40px;
+background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+animation: scrollPulse 2s ease infinite;
+}
+
+/* ─── STICKY NAV ─────────────────────────── */
+.sticky-nav {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(250,246,239,0.92);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid var(–sand);
+padding: 0 1rem;
+overflow-x: auto;
+scrollbar-width: none;
+}
+.sticky-nav::-webkit-scrollbar { display: none; }
+
+.nav-inner {
+display: flex;
+gap: 0;
+min-width: max-content;
+margin: 0 auto;
+max-width: 900px;
+}
+
+.nav-item {
+display: flex;
+align-items: center;
+gap: 0.4rem;
+padding: 0.85rem 1rem;
+font-size: 0.78rem;
+font-weight: 500;
+color: var(–muted);
+text-decoration: none;
+border-bottom: 2px solid transparent;
+white-space: nowrap;
+transition: color 0.2s, border-color 0.2s;
+cursor: pointer;
+}
+
+.nav-item:hover, .nav-item.active {
+color: var(–terracotta);
+border-bottom-color: var(–terracotta);
+}
+
+/* ─── LAYOUT ─────────────────────────────── */
+.container {
+max-width: 900px;
+margin: 0 auto;
+padding: 0 1.25rem;
+}
+
+section {
+padding: 3.5rem 0;
+}
+
+.section-label {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+font-size: 0.7rem;
+font-weight: 600;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–terracotta);
+margin-bottom: 0.5rem;
+}
+
+.section-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: clamp(1.6rem, 4vw, 2.2rem);
+color: var(–midnight);
+margin-bottom: 0.5rem;
+line-height: 1.2;
+}
+
+.section-desc {
+color: var(–muted);
+font-size: 0.9rem;
+margin-bottom: 2rem;
+}
+
+/* ─── JOURNEY CARDS ──────────────────────── */
+.journey-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1rem;
+}
+
+@media (min-width: 640px) {
+.journey-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.journey-card {
+background: var(–warm-white);
+border-radius: 20px;
+padding: 1.5rem;
+box-shadow: var(–card-shadow);
+border: 1px solid var(–sand);
+position: relative;
+overflow: hidden;
+transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.journey-card:hover {
+transform: translateY(-3px);
+box-shadow: var(–card-shadow-hover);
+}
+
+.journey-card::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 3px;
+background: linear-gradient(90deg, var(–terracotta), var(–gold));
+border-radius: 20px 20px 0 0;
+}
+
+.journey-card.return::before {
+background: linear-gradient(90deg, var(–forest), var(–blue));
+}
+
+.journey-card.intercity::before {
+background: linear-gradient(90deg, var(–blue), var(–forest));
+}
+
+.journey-header {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+margin-bottom: 1.25rem;
+}
+
+.journey-icon {
+width: 44px; height: 44px;
+border-radius: 12px;
+background: var(–terracotta-pale);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.3rem;
+flex-shrink: 0;
+}
+
+.journey-card.return .journey-icon { background: var(–forest-pale); }
+.journey-card.intercity .journey-icon { background: var(–blue-pale); }
+
+.journey-tag {
+font-size: 0.68rem;
+font-weight: 600;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–terracotta);
+}
+
+.journey-card.return .journey-tag { color: var(–forest); }
+.journey-card.intercity .journey-tag { color: var(–blue); }
+
+.journey-name {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.05rem;
+color: var(–midnight);
+}
+
+.journey-route {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+margin-bottom: 1rem;
+}
+
+.route-station {
+flex: 1;
+}
+
+.station-code {
+font-weight: 700;
+font-size: 1.2rem;
+color: var(–midnight);
+font-family: ‘DM Serif Display’, serif;
+}
+
+.station-time {
+font-size: 0.8rem;
+color: var(–muted);
+}
+
+.route-line {
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 2px;
+}
+
+.route-dots {
+display: flex;
+align-items: center;
+width: 100%;
+gap: 0;
+}
+
+.route-dot {
+width: 7px; height: 7px;
+border-radius: 50%;
+background: var(–terracotta);
+flex-shrink: 0;
+}
+
+.route-dash {
+flex: 1;
+height: 1.5px;
+background: repeating-linear-gradient(90deg, var(–terracotta) 0, var(–terracotta) 4px, transparent 4px, transparent 8px);
+}
+
+.journey-card.return .route-dot, .journey-card.return .route-dash { background-color: var(–forest); }
+.journey-card.return .route-dash {
+background: repeating-linear-gradient(90deg, var(–forest) 0, var(–forest) 4px, transparent 4px, transparent 8px);
+}
+
+.journey-card.intercity .route-dot { background: var(–blue); }
+.journey-card.intercity .route-dash {
+background: repeating-linear-gradient(90deg, var(–blue) 0, var(–blue) 4px, transparent 4px, transparent 8px);
+}
+
+.journey-detail {
+display: flex;
+align-items: center;
+gap: 0.4rem;
+font-size: 0.78rem;
+color: var(–muted);
+padding: 0.35rem 0;
+border-top: 1px solid var(–sand);
+}
+
+/* ─── STAY CARDS ─────────────────────────── */
+.stay-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1rem;
+}
+
+@media (min-width: 580px) {
+.stay-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.stay-card {
+background: var(–warm-white);
+border-radius: 20px;
+overflow: hidden;
+box-shadow: var(–card-shadow);
+border: 1px solid var(–sand);
+transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.stay-card:hover {
+transform: translateY(-3px);
+box-shadow: var(–card-shadow-hover);
+}
+
+.stay-banner {
+height: 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 3rem;
+position: relative;
+overflow: hidden;
+}
+
+.stay-banner.blr {
+background: linear-gradient(135deg, #C4714A22 0%, #3A5A4022 100%),
+repeating-linear-gradient(45deg, #C4714A08 0, #C4714A08 10px, transparent 10px, transparent 20px);
+background-color: #FAF0E6;
+}
+
+.stay-banner.mys {
+background: linear-gradient(135deg, #3B6FA022 0%, #C9932A22 100%),
+repeating-linear-gradient(-45deg, #3B6FA008 0, #3B6FA008 10px, transparent 10px, transparent 20px);
+background-color: #EEF4FA;
+}
+
+.stay-body { padding: 1.25rem; }
+
+.stay-city {
+font-size: 0.68rem;
+font-weight: 600;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(–terracotta);
+margin-bottom: 0.25rem;
+}
+
+.stay-card:nth-child(2) .stay-city { color: var(–blue); }
+
+.stay-name {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.15rem;
+color: var(–midnight);
+margin-bottom: 0.75rem;
+}
+
+.stay-info {
+display: flex;
+flex-direction: column;
+gap: 0.4rem;
+}
+
+.stay-row {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-size: 0.8rem;
+color: var(–muted);
+}
+
+/* ─── DAYS TIMELINE ──────────────────────── */
+.days-grid {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.day-card {
+background: var(–warm-white);
+border-radius: 20px;
+box-shadow: var(–card-shadow);
+border: 1px solid var(–sand);
+overflow: hidden;
+transition: box-shadow 0.25s;
+}
+
+.day-header {
+display: flex;
+align-items: center;
+gap: 1rem;
+padding: 1.25rem 1.5rem;
+cursor: pointer;
+user-select: none;
+position: relative;
+}
+
+.day-number {
+width: 52px; height: 52px;
+border-radius: 14px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+font-weight: 700;
+}
+
+.day-number .num {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.3rem;
+line-height: 1;
+}
+
+.day-number .label {
+font-size: 0.58rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+opacity: 0.8;
+}
+
+.day-1 .day-number { background: var(–terracotta-pale); color: var(–terracotta); }
+.day-2 .day-number { background: var(–forest-pale); color: var(–forest); }
+.day-3 .day-number { background: #FFF3D6; color: var(–gold); }
+.day-4 .day-number { background: var(–blue-pale); color: var(–blue); }
+.day-5 .day-number { background: #F0EBF8; color: #7B5EA7; }
+
+.day-info { flex: 1; }
+
+.day-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.05rem;
+color: var(–midnight);
+}
+
+.day-date {
+font-size: 0.75rem;
+color: var(–muted);
+}
+
+.day-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 0.35rem;
+margin-top: 0.4rem;
+}
+
+.day-tag {
+font-size: 0.65rem;
+padding: 0.15rem 0.5rem;
+border-radius: 100px;
+font-weight: 500;
+}
+
+.tag-food { background: #FEE9DC; color: #C4714A; }
+.tag-sight { background: #DCF0E0; color: #3A5A40; }
+.tag-travel { background: #DCE8F8; color: #3B6FA0; }
+.tag-wild { background: #FFF3D6; color: #C9932A; }
+
+.day-chevron {
+font-size: 1.1rem;
+color: var(–muted);
+transition: transform 0.3s ease;
+flex-shrink: 0;
+}
+
+.day-card.open .day-chevron { transform: rotate(180deg); }
+
+.day-body {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.45s ease;
+}
+
+.day-card.open .day-body { max-height: 2000px; }
+
+.day-body-inner {
+padding: 0 1.5rem 1.5rem;
+border-top: 1px solid var(–sand);
+}
+
+/* Timeline */
+.timeline {
+position: relative;
+padding-top: 1.25rem;
+}
+
+.timeline::before {
+content: ‘’;
+position: absolute;
+left: 18px;
+top: 1.6rem;
+bottom: 0.5rem;
+width: 1.5px;
+background: var(–sand);
+}
+
+.tl-item {
+display: flex;
+gap: 1rem;
+margin-bottom: 1.1rem;
+position: relative;
+}
+
+.tl-dot {
+width: 36px;
+height: 36px;
+border-radius: 50%;
+background: var(–warm-white);
+border: 2px solid var(–sand);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.95rem;
+flex-shrink: 0;
+position: relative;
+z-index: 1;
+}
+
+.tl-content { flex: 1; padding-top: 0.45rem; }
+
+.tl-time {
+font-size: 0.7rem;
+font-weight: 600;
+color: var(–terracotta);
+letter-spacing: 0.05em;
+margin-bottom: 0.1rem;
+}
+
+.tl-text {
+font-size: 0.88rem;
+color: var(–ink);
+font-weight: 500;
+}
+
+.tl-sub {
+font-size: 0.75rem;
+color: var(–muted);
+margin-top: 0.1rem;
+}
+
+.day-transport {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+background: var(–gold-pale);
+border-radius: 10px;
+padding: 0.6rem 0.9rem;
+margin-top: 1rem;
+font-size: 0.8rem;
+color: var(–ink);
+}
+
+/* ─── TRANSPORT TABLE ────────────────────── */
+.transport-cards {
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+
+.transport-row {
+display: flex;
+align-items: center;
+gap: 1rem;
+background: var(–warm-white);
+border-radius: 14px;
+padding: 0.85rem 1.1rem;
+border: 1px solid var(–sand);
+box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+transition: transform 0.2s;
+}
+
+.transport-row:hover { transform: translateX(4px); }
+
+.tr-icon {
+width: 38px; height: 38px;
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.1rem;
+flex-shrink: 0;
+}
+
+.tr-icon.taxi { background: var(–gold-pale); }
+.tr-icon.metro { background: var(–blue-pale); }
+
+.tr-route {
+flex: 1;
+font-size: 0.85rem;
+font-weight: 500;
+color: var(–midnight);
+}
+
+.tr-detail {
+font-size: 0.75rem;
+color: var(–muted);
+text-align: right;
+}
+
+/* ─── FOOD CARDS ─────────────────────────── */
+.food-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+gap: 0.9rem;
+}
+
+.food-card {
+background: var(–warm-white);
+border-radius: 16px;
+padding: 1.1rem;
+text-align: center;
+border: 1px solid var(–sand);
+box-shadow: var(–card-shadow);
+transition: transform 0.22s, box-shadow 0.22s;
+}
+
+.food-card:hover {
+transform: translateY(-4px);
+box-shadow: var(–card-shadow-hover);
+}
+
+.food-emoji { font-size: 2.2rem; margin-bottom: 0.6rem; }
+
+.food-name {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1rem;
+color: var(–midnight);
+margin-bottom: 0.25rem;
+}
+
+.food-meal {
+font-size: 0.7rem;
+font-weight: 600;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(–terracotta);
+}
+
+.food-note {
+font-size: 0.75rem;
+color: var(–muted);
+margin-top: 0.3rem;
+}
+
+/* ─── BOOKINGS ───────────────────────────── */
+.bookings-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1rem;
+}
+
+@media (min-width: 560px) {
+.bookings-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.booking-card {
+background: var(–warm-white);
+border-radius: 18px;
+padding: 1.4rem;
+border: 1px solid var(–sand);
+box-shadow: var(–card-shadow);
+position: relative;
+overflow: hidden;
+}
+
+.booking-card::after {
+content: ‘’;
+position: absolute;
+bottom: -20px; right: -20px;
+width: 80px; height: 80px;
+border-radius: 50%;
+opacity: 0.07;
+}
+
+.booking-card.safari::after { background: var(–gold); }
+.booking-card.train::after { background: var(–forest); }
+
+.booking-status {
+display: inline-flex;
+align-items: center;
+gap: 0.35rem;
+font-size: 0.68rem;
+font-weight: 600;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+padding: 0.2rem 0.6rem;
+border-radius: 100px;
+margin-bottom: 0.75rem;
+}
+
+.status-confirmed { background: var(–forest-pale); color: var(–forest); }
+.status-waitlist { background: #FEF3CD; color: #856404; }
+
+.booking-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.1rem;
+color: var(–midnight);
+margin-bottom: 0.75rem;
+}
+
+.booking-detail {
+display: flex;
+align-items: flex-start;
+gap: 0.5rem;
+font-size: 0.8rem;
+color: var(–muted);
+margin-bottom: 0.35rem;
+}
+
+/* ─── TIPS ───────────────────────────────── */
+.tips-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 0.75rem;
+}
+
+@media (min-width: 480px) {
+.tips-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.tip-item {
+display: flex;
+align-items: flex-start;
+gap: 0.75rem;
+background: var(–warm-white);
+border-radius: 14px;
+padding: 0.9rem 1rem;
+border: 1px solid var(–sand);
+font-size: 0.83rem;
+color: var(–ink);
+}
+
+.tip-icon {
+font-size: 1.3rem;
+flex-shrink: 0;
+margin-top: 0.05rem;
+}
+
+/* ─── CHECKLIST SECTION ─────────────────── */
+.cl-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1rem;
+}
+@media (min-width: 600px) {
+.cl-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.cl-accordion {
+background: var(–warm-white);
+border-radius: 18px;
+border: 1px solid var(–sand);
+box-shadow: var(–card-shadow);
+overflow: hidden;
+transition: box-shadow 0.2s;
+}
+.cl-accordion:hover { box-shadow: var(–card-shadow-hover); }
+
+.cl-acc-header {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+padding: 1rem 1.25rem;
+cursor: pointer;
+user-select: none;
+background: var(–warm-white);
+}
+
+.cl-acc-icon {
+width: 40px; height: 40px;
+border-radius: 11px;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.2rem;
+flex-shrink: 0;
+}
+.cl-acc-icon.clothing   { background: #FDE8E0; }
+.cl-acc-icon.essentials { background: #E8F5E9; }
+.cl-acc-icon.medical    { background: #FCE4EC; }
+.cl-acc-icon.kids       { background: #FFF8E1; }
+.cl-acc-icon.electronics{ background: #E3F2FD; }
+
+.cl-acc-title {
+flex: 1;
+font-family: ‘DM Serif Display’, serif;
+font-size: 1rem;
+color: var(–midnight);
+}
+.cl-acc-count {
+font-size: 0.7rem;
+font-weight: 600;
+color: var(–muted);
+background: var(–sand);
+border-radius: 100px;
+padding: 0.15rem 0.55rem;
+}
+.cl-acc-chev {
+font-size: 0.85rem;
+color: var(–muted);
+transition: transform 0.3s;
+margin-left: 0.25rem;
+}
+.cl-accordion.open .cl-acc-chev { transform: rotate(180deg); }
+
+.cl-acc-body {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.4s ease;
+}
+.cl-accordion.open .cl-acc-body { max-height: 600px; }
+
+.cl-acc-inner {
+padding: 0 1.25rem 1.1rem;
+border-top: 1px solid var(–sand);
+}
+
+.cl-item {
+display: flex;
+align-items: center;
+gap: 0.65rem;
+padding: 0.5rem 0;
+border-bottom: 1px solid rgba(232,221,208,0.5);
+font-size: 0.85rem;
+color: var(–ink);
+cursor: pointer;
+}
+.cl-item:last-child { border-bottom: none; }
+
+.cl-checkbox {
+width: 20px; height: 20px;
+border-radius: 6px;
+border: 2px solid var(–sand);
+background: white;
+flex-shrink: 0;
+display: flex; align-items: center; justify-content: center;
+transition: background 0.18s, border-color 0.18s;
+cursor: pointer;
+}
+.cl-checkbox.checked {
+background: var(–forest);
+border-color: var(–forest);
+}
+.cl-checkbox.checked::after {
+content: ‘✓’;
+color: white;
+font-size: 0.7rem;
+font-weight: 700;
+}
+.cl-item.done .cl-label {
+text-decoration: line-through;
+color: var(–muted);
+}
+
+/* ─── SAFETY CARDS ───────────────────────── */
+.safety-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1rem;
+margin-bottom: 1.25rem;
+}
+@media (min-width: 560px) {
+.safety-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 800px) {
+.safety-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.safety-card {
+background: var(–warm-white);
+border-radius: 16px;
+padding: 1.1rem 1.2rem;
+border: 1px solid var(–sand);
+box-shadow: var(–card-shadow);
+}
+
+.safety-card-header {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+margin-bottom: 0.8rem;
+}
+
+.safety-card-icon {
+font-size: 1.4rem;
+}
+
+.safety-card-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 0.95rem;
+color: var(–midnight);
+}
+
+.safety-list {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 0.35rem;
+}
+
+.safety-list li {
+font-size: 0.8rem;
+color: var(–muted);
+display: flex;
+align-items: flex-start;
+gap: 0.45rem;
+}
+
+.safety-list li::before {
+content: ‘›’;
+color: var(–terracotta);
+font-weight: 700;
+font-size: 1rem;
+line-height: 1.2;
+flex-shrink: 0;
+}
+
+/* Transport tips two-col */
+.transport-tips-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1rem;
+}
+@media (min-width: 520px) {
+.transport-tips-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.transport-tip-card {
+background: var(–warm-white);
+border-radius: 16px;
+padding: 1.1rem;
+border: 1px solid var(–sand);
+box-shadow: var(–card-shadow);
+}
+.transport-tip-card .tt-header {
+display: flex; align-items: center; gap: 0.5rem;
+margin-bottom: 0.7rem;
+}
+.transport-tip-card .tt-icon {
+font-size: 1.4rem;
+}
+.transport-tip-card .tt-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 0.95rem;
+color: var(–midnight);
+}
+.transport-tip-card .tt-badge {
+font-size: 0.6rem;
+font-weight: 600;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+padding: 0.15rem 0.5rem;
+border-radius: 100px;
+margin-left: auto;
+}
+.badge-rec { background: var(–forest-pale); color: var(–forest); }
+.badge-avoid { background: #FEF3CD; color: #856404; }
+
+/* Alert boxes */
+.alert-box {
+border-radius: 14px;
+padding: 1rem 1.1rem;
+display: flex;
+gap: 0.75rem;
+align-items: flex-start;
+margin-bottom: 1rem;
+}
+.alert-box.warning {
+background: #FFF8E6;
+border: 1.5px solid #F0C430;
+}
+.alert-box.danger {
+background: #FFF0F0;
+border: 1.5px solid #E57373;
+}
+.alert-box.info {
+background: var(–blue-pale);
+border: 1.5px solid #90BBE0;
+}
+.alert-box.success {
+background: var(–forest-pale);
+border: 1.5px solid #8EC49A;
+}
+
+.alert-icon { font-size: 1.4rem; flex-shrink: 0; }
+.alert-content { flex: 1; }
+.alert-title {
+font-weight: 600;
+font-size: 0.88rem;
+color: var(–midnight);
+margin-bottom: 0.25rem;
+}
+.alert-text {
+font-size: 0.8rem;
+color: var(–muted);
+line-height: 1.5;
+}
+.alert-options {
+display: flex;
+flex-wrap: wrap;
+gap: 0.4rem;
+margin-top: 0.5rem;
+}
+.alert-option-pill {
+font-size: 0.72rem;
+font-weight: 600;
+padding: 0.2rem 0.6rem;
+border-radius: 100px;
+background: rgba(0,0,0,0.07);
+color: var(–ink);
+}
+
+/* Smart tips highlight box */
+.smart-tips-box {
+background: linear-gradient(135deg, var(–midnight) 0%, #2C3E50 100%);
+border-radius: 20px;
+padding: 1.5rem;
+color: white;
+}
+.smart-tips-box .st-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.1rem;
+color: #F0C882;
+margin-bottom: 1rem;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+.smart-tips-list {
+display: grid;
+grid-template-columns: 1fr;
+gap: 0.6rem;
+}
+@media (min-width: 480px) {
+.smart-tips-list { grid-template-columns: 1fr 1fr; }
+}
+.st-item {
+display: flex;
+align-items: flex-start;
+gap: 0.6rem;
+font-size: 0.82rem;
+color: rgba(255,255,255,0.8);
+background: rgba(255,255,255,0.07);
+border-radius: 10px;
+padding: 0.6rem 0.8rem;
+}
+.st-dot {
+width: 6px; height: 6px;
+border-radius: 50%;
+background: #F0C882;
+flex-shrink: 0;
+margin-top: 0.4rem;
+}
+
+/* Progress tracker */
+.checklist-progress {
+background: var(–warm-white);
+border-radius: 14px;
+padding: 1rem 1.25rem;
+border: 1px solid var(–sand);
+margin-bottom: 1.25rem;
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+.progress-bar-wrap {
+flex: 1;
+height: 8px;
+background: var(–sand);
+border-radius: 100px;
+overflow: hidden;
+}
+.progress-bar-fill {
+height: 100%;
+background: linear-gradient(90deg, var(–forest), var(–terracotta));
+border-radius: 100px;
+transition: width 0.35s ease;
+width: 0%;
+}
+.progress-text {
+font-size: 0.78rem;
+font-weight: 600;
+color: var(–forest);
+white-space: nowrap;
+}
+
+/* ─── FOOTER ─────────────────────────────── */
+.footer {
+background: var(–midnight);
+color: rgba(255,255,255,0.5);
+text-align: center;
+padding: 2.5rem 1.5rem;
+font-size: 0.78rem;
+}
+
+.footer-title {
+font-family: ‘DM Serif Display’, serif;
+font-size: 1.3rem;
+color: rgba(255,255,255,0.8);
+margin-bottom: 0.4rem;
+}
+
+/* ─── ANIMATIONS ─────────────────────────── */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(20px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+0%, 100% { opacity: 0.4; }
+50% { opacity: 1; }
+}
+
+.reveal {
+opacity: 0;
+transform: translateY(18px);
+transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── DIVIDER ─────────────────────────────── */
+.section-divider {
+height: 1px;
+background: var(–sand);
+margin: 0 1.25rem;
+}
+
+/* ─── MAP LINK ───────────────────────────── */
+.map-link {
+display: inline-flex;
+align-items: center;
+gap: 0.4rem;
+font-size: 0.78rem;
+font-weight: 500;
+color: var(–blue);
+text-decoration: none;
+background: var(–blue-pale);
+border-radius: 8px;
+padding: 0.3rem 0.7rem;
+margin-top: 0.5rem;
+transition: background 0.2s;
+}
+.map-link:hover { background: #C0D9EF; }
+
+/* Print */
+@media print {
+.sticky-nav, .hero-scroll { display: none !important; }
+section { padding: 1.5rem 0; }
+.day-body { max-height: none !important; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero" id="top">
+  <div class="hero-pattern"></div>
+  <div class="hero-badge">✈️ &nbsp;Family Trip 2026</div>
+  <h1 class="hero-title"><em>Bengaluru</em> &amp; Mysuru<br>Family Adventure</h1>
+  <p class="hero-subtitle">30 March – 5 April 2026 &nbsp;·&nbsp; 6 Days</p>
+  <div class="hero-meta">
+    <div class="meta-pill"><span class="icon">👨‍👩‍👧‍👦</span> 2 Adults + 2 Kids (7 &amp; 9)</div>
+    <div class="meta-pill"><span class="icon">🚆</span> Train Travel</div>
+    <div class="meta-pill"><span class="icon">🦁</span> Safari Booked</div>
+    <div class="meta-pill"><span class="icon">🏨</span> 2 Hotel Stays</div>
+    <div class="meta-pill"><span class="icon">🏙️</span> Trivandrum → BLR</div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- STICKY NAV -->
+
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a class="nav-item active" href="#journey">🚆 Journey</a>
+    <a class="nav-item" href="#stays">🏨 Stays</a>
+    <a class="nav-item" href="#itinerary">🗓️ Itinerary</a>
+    <a class="nav-item" href="#transport">🚕 Transport</a>
+    <a class="nav-item" href="#food">🍽️ Food</a>
+    <a class="nav-item" href="#bookings">🎟️ Bookings</a>
+    <a class="nav-item" href="#tips">💡 Tips</a>
+    <a class="nav-item" href="#checklist">🎒 Checklist</a>
+  </div>
+</nav>
+
+<!-- JOURNEY -->
+
+<section id="journey">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">🚆 Travel Details</div>
+      <h2 class="section-title">Train Journeys</h2>
+      <p class="section-desc">Three confirmed trains covering the full route across 6 days.</p>
+    </div>
+    <div class="journey-grid reveal">
+      <!-- Onward -->
+      <div class="journey-card">
+        <div class="journey-header">
+          <div class="journey-icon">🚆</div>
+          <div>
+            <div class="journey-tag">Onward Journey</div>
+            <div class="journey-name">12258 Trivandrum – Yesvantpur</div>
+          </div>
+        </div>
+        <div class="journey-route">
+          <div class="route-station">
+            <div class="station-code">TVCN</div>
+            <div class="station-time">30 Mar, 5:00 PM</div>
+          </div>
+          <div class="route-line">
+            <div class="route-dots">
+              <div class="route-dot"></div>
+              <div class="route-dash"></div>
+              <div class="route-dot"></div>
+            </div>
+          </div>
+          <div class="route-station" style="text-align:right">
+            <div class="station-code">YPR</div>
+            <div class="station-time">31 Mar, 9:45 AM</div>
+          </div>
+        </div>
+        <div class="journey-detail">⏱️ ~16h 45m &nbsp;·&nbsp; Overnight journey</div>
+        <div class="journey-detail">📍 Yesvantpur Junction, Bengaluru</div>
+      </div>
+      <!-- Intercity -->
+      <div class="journey-card intercity">
+        <div class="journey-header">
+          <div class="journey-icon">🚄</div>
+          <div>
+            <div class="journey-tag">Intercity</div>
+            <div class="journey-name">12785 Bengaluru – Mysuru</div>
+          </div>
+        </div>
+        <div class="journey-route">
+          <div class="route-station">
+            <div class="station-code">SBC</div>
+            <div class="station-time">3 Apr, 6:20 AM</div>
+          </div>
+          <div class="route-line">
+            <div class="route-dots">
+              <div class="route-dot"></div>
+              <div class="route-dash"></div>
+              <div class="route-dot"></div>
+            </div>
+          </div>
+          <div class="route-station" style="text-align:right">
+            <div class="station-code">MYS</div>
+            <div class="station-time">3 Apr, 9:30 AM</div>
+          </div>
+        </div>
+        <div class="journey-detail">⏱️ ~3h 10m &nbsp;·&nbsp; Early morning</div>
+        <div class="journey-detail">📍 Mysuru Railway Station</div>
+      </div>
+      <!-- Return -->
+      <div class="journey-card return" style="grid-column: 1 / -1;">
+        <div class="journey-header">
+          <div class="journey-icon">🏠</div>
+          <div>
+            <div class="journey-tag">Return Journey</div>
+            <div class="journey-name">16315 Mysuru – Trivandrum Express</div>
+          </div>
+        </div>
+        <div class="journey-route">
+          <div class="route-station">
+            <div class="station-code">MYS</div>
+            <div class="station-time">4 Apr, 12:45 PM</div>
+          </div>
+          <div class="route-line">
+            <div class="route-dots">
+              <div class="route-dot"></div>
+              <div class="route-dash"></div>
+              <div class="route-dot"></div>
+            </div>
+          </div>
+          <div class="route-station" style="text-align:right">
+            <div class="station-code">TVCN</div>
+            <div class="station-time">5 Apr (Morning)</div>
+          </div>
+        </div>
+        <div class="journey-detail">⚠️ Return ticket on waitlist — monitor status on IRCTC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- STAYS -->
+
+<section id="stays">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">🏨 Accommodation</div>
+      <h2 class="section-title">Where You're Staying</h2>
+      <p class="section-desc">Two hotels across the journey — city-central and palace-side.</p>
+    </div>
+    <div class="stay-grid reveal">
+      <div class="stay-card">
+        <div class="stay-banner blr">🏙️</div>
+        <div class="stay-body">
+          <div class="stay-city">Bengaluru</div>
+          <div class="stay-name">Grand Kalinga Hotel</div>
+          <div class="stay-info">
+            <div class="stay-row">📅 31 Mar – 3 Apr (3 nights)</div>
+            <div class="stay-row">📍 Gandhi Nagar, Bengaluru</div>
+            <div class="stay-row">🧳 Check-in: 31 Mar ~12:00 PM</div>
+            <div class="stay-row">🚪 Check-out: 3 Apr (early – train at 6:20)</div>
+          </div>
+          <a class="map-link" href="https://maps.google.com/?q=Grand+Kalinga+Hotel+Gandhi+Nagar+Bengaluru" target="_blank">📍 View on Maps</a>
+        </div>
+      </div>
+      <div class="stay-card">
+        <div class="stay-banner mys">🏰</div>
+        <div class="stay-body">
+          <div class="stay-city">Mysuru</div>
+          <div class="stay-name">Advaittha Residency</div>
+          <div class="stay-info">
+            <div class="stay-row">📅 3 Apr – 4 Apr (1 night)</div>
+            <div class="stay-row">📍 Near Mysuru Palace</div>
+            <div class="stay-row">🧳 Check-in: 3 Apr afternoon</div>
+            <div class="stay-row">🚪 Check-out: 4 Apr morning</div>
+          </div>
+          <a class="map-link" href="https://maps.google.com/?q=Advaittha+Residency+Mysuru" target="_blank">📍 View on Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ITINERARY -->
+
+<section id="itinerary">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">🗓️ Day-wise Plan</div>
+      <h2 class="section-title">Your Itinerary</h2>
+      <p class="section-desc">Tap a day to expand the full timeline. Plan is flexible — adjust as needed!</p>
+    </div>
+
+```
+<div class="days-grid reveal">
+
+  <!-- DAY 1 -->
+  <div class="day-card day-1 open" id="day1">
+    <div class="day-header" onclick="toggleDay('day1')">
+      <div class="day-number"><span class="num">D1</span><span class="label">Day 1</span></div>
+      <div class="day-info">
+        <div class="day-title">Arrival &amp; Relax in Bengaluru</div>
+        <div class="day-date">31 March 2026 · Sunday</div>
+        <div class="day-tags">
+          <span class="day-tag tag-travel">Arrival</span>
+          <span class="day-tag tag-sight">Cubbon Park</span>
+          <span class="day-tag tag-food">CTR Breakfast</span>
+        </div>
+      </div>
+      <div class="day-chevron">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="day-body-inner">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot">🚆</div>
+            <div class="tl-content">
+              <div class="tl-time">9:45 AM</div>
+              <div class="tl-text">Arrive at Yesvantpur Railway Station</div>
+              <div class="tl-sub">Fresh up at station. Taxi booked to hotel.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">☕</div>
+            <div class="tl-content">
+              <div class="tl-time">10:30 AM</div>
+              <div class="tl-text">Breakfast at CTR (Central Tiffin Room)</div>
+              <div class="tl-sub">Famous Benne Masala Dosa &amp; filter coffee</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🌳</div>
+            <div class="tl-content">
+              <div class="tl-time">12:00 PM</div>
+              <div class="tl-text">Cubbon Park stroll</div>
+              <div class="tl-sub">Open lawns, kids' play, rose garden</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🏨</div>
+            <div class="tl-content">
+              <div class="tl-time">1:30 PM</div>
+              <div class="tl-text">Hotel check-in &amp; rest</div>
+              <div class="tl-sub">Grand Kalinga Hotel, Gandhi Nagar</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🏛️</div>
+            <div class="tl-content">
+              <div class="tl-time">4:30 PM</div>
+              <div class="tl-text">Vidhana Soudha visit</div>
+              <div class="tl-sub">Photo stop &amp; evening walk around the area</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🍽️</div>
+            <div class="tl-content">
+              <div class="tl-time">7:00 PM</div>
+              <div class="tl-text">Dinner at Empire Restaurant</div>
+              <div class="tl-sub">Family-friendly, great North Indian &amp; biryani</div>
+            </div>
+          </div>
+        </div>
+        <div class="day-transport">🚕 Taxi + 🚇 Metro (Purple Line) &nbsp;·&nbsp; Save taxi fare with metro for city hops</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card day-2" id="day2">
+    <div class="day-header" onclick="toggleDay('day2')">
+      <div class="day-number"><span class="num">D2</span><span class="label">Day 2</span></div>
+      <div class="day-info">
+        <div class="day-title">Palace, Gardens &amp; History</div>
+        <div class="day-date">1 April 2026 · Wednesday</div>
+        <div class="day-tags">
+          <span class="day-tag tag-sight">Bengaluru Palace</span>
+          <span class="day-tag tag-sight">Lalbagh</span>
+          <span class="day-tag tag-food">MTR</span>
+        </div>
+      </div>
+      <div class="day-chevron">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="day-body-inner">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot">☕</div>
+            <div class="tl-content">
+              <div class="tl-time">8:00 AM</div>
+              <div class="tl-text">Breakfast at Airlines Hotel</div>
+              <div class="tl-sub">Iconic Karnataka breakfast – Idli, Vada, Kesari Bath</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🏰</div>
+            <div class="tl-content">
+              <div class="tl-time">9:30 AM</div>
+              <div class="tl-text">Bengaluru Palace</div>
+              <div class="tl-sub">Tudor-style architecture, great for photos with kids</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🍱</div>
+            <div class="tl-content">
+              <div class="tl-time">1:00 PM</div>
+              <div class="tl-text">Lunch at Shivaji Military Hotel</div>
+              <div class="tl-sub">No-frills, authentic Karnataka meals</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🌿</div>
+            <div class="tl-content">
+              <div class="tl-time">3:00 PM</div>
+              <div class="tl-text">Lalbagh Botanical Garden</div>
+              <div class="tl-sub">Glass house, boating pond, 1,800+ plant species</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🍽️</div>
+            <div class="tl-content">
+              <div class="tl-time">7:30 PM</div>
+              <div class="tl-text">Dinner at MTR (Mavalli Tiffin Rooms)</div>
+              <div class="tl-sub">Historic 1924 restaurant – traditional South Indian thali</div>
+            </div>
+          </div>
+        </div>
+        <div class="day-transport">🚕 Taxi + 🚇 Metro (Purple &amp; Green Line) &nbsp;·&nbsp; Metro covers most BLR city stops</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card day-3" id="day3">
+    <div class="day-header" onclick="toggleDay('day3')">
+      <div class="day-number"><span class="num">D3</span><span class="label">Day 3</span></div>
+      <div class="day-info">
+        <div class="day-title">🦁 Safari Day at Bannerghatta</div>
+        <div class="day-date">2 April 2026 · Thursday</div>
+        <div class="day-tags">
+          <span class="day-tag tag-wild">Safari 🦁</span>
+          <span class="day-tag tag-travel">22 km Drive</span>
+          <span class="day-tag tag-food">Nagarjuna</span>
+        </div>
+      </div>
+      <div class="day-chevron">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="day-body-inner">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot">☕</div>
+            <div class="tl-content">
+              <div class="tl-time">7:30 AM</div>
+              <div class="tl-text">Quick breakfast at Veena Stores</div>
+              <div class="tl-sub">Fast, authentic – carry snacks &amp; water for kids</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🚕</div>
+            <div class="tl-content">
+              <div class="tl-time">9:15 AM</div>
+              <div class="tl-text">Depart for Bannerghatta</div>
+              <div class="tl-sub">22 km · ~1 hour by taxi. Report by 10:45 AM.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🦁</div>
+            <div class="tl-content">
+              <div class="tl-time">11:00 AM</div>
+              <div class="tl-text">Safari (Pre-booked!) — 11:00–12:00 PM</div>
+              <div class="tl-sub">Lions, tigers, bears &amp; more. Report at 10:45 AM sharp.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🍛</div>
+            <div class="tl-content">
+              <div class="tl-time">2:15 PM</div>
+              <div class="tl-text">Lunch at Empire Bannerghatta</div>
+              <div class="tl-sub">Biriyani, kebabs, great for hungry kids post-safari!</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">😴</div>
+            <div class="tl-content">
+              <div class="tl-time">4:00 PM</div>
+              <div class="tl-text">Return to hotel &amp; rest</div>
+              <div class="tl-sub">Kids will need a nap — plan a quiet evening</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🍽️</div>
+            <div class="tl-content">
+              <div class="tl-time">7:30 PM</div>
+              <div class="tl-text">Dinner at Nagarjuna</div>
+              <div class="tl-sub">Authentic Andhra meals – spicy &amp; wholesome</div>
+            </div>
+          </div>
+        </div>
+        <div class="day-transport">🚕 Dedicated Taxi (22 km, ~1 hr each way) &nbsp;·&nbsp; Book taxi for full day ₹1200–1500</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-card day-4" id="day4">
+    <div class="day-header" onclick="toggleDay('day4')">
+      <div class="day-number"><span class="num">D4</span><span class="label">Day 4</span></div>
+      <div class="day-info">
+        <div class="day-title">🏰 Mysuru – Palace, Zoo &amp; Gardens</div>
+        <div class="day-date">3 April 2026 · Friday</div>
+        <div class="day-tags">
+          <span class="day-tag tag-travel">Train 6:20 AM</span>
+          <span class="day-tag tag-sight">Mysuru Palace</span>
+          <span class="day-tag tag-sight">Brindavan</span>
+        </div>
+      </div>
+      <div class="day-chevron">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="day-body-inner">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot">🚆</div>
+            <div class="tl-content">
+              <div class="tl-time">6:20 AM</div>
+              <div class="tl-text">Train from SBC to Mysuru (12785)</div>
+              <div class="tl-sub">Reach station by 5:35 AM. Arrive Mysuru 9:30 AM.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🍳</div>
+            <div class="tl-content">
+              <div class="tl-time">10:00 AM</div>
+              <div class="tl-text">Breakfast at Mylari Hotel</div>
+              <div class="tl-sub">The legendary Mysuru dosa – soft, buttery perfection</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🏰</div>
+            <div class="tl-content">
+              <div class="tl-time">11:00 AM</div>
+              <div class="tl-text">Mysuru Palace visit</div>
+              <div class="tl-sub">Grand Indo-Saracenic architecture, illuminated on Sundays</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🍛</div>
+            <div class="tl-content">
+              <div class="tl-time">1:30 PM</div>
+              <div class="tl-text">Lunch at RRR Restaurant</div>
+              <div class="tl-sub">Classic Mysuru meals served on banana leaf</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🦒</div>
+            <div class="tl-content">
+              <div class="tl-time">3:00 PM</div>
+              <div class="tl-text">Mysuru Zoo</div>
+              <div class="tl-sub">One of India's best – white tigers, gorillas &amp; more</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">⛲</div>
+            <div class="tl-content">
+              <div class="tl-time">6:00 PM</div>
+              <div class="tl-text">Brindavan Gardens – Fountain Show</div>
+              <div class="tl-sub">Musical fountain show at dusk. Kids love it!</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🍽️</div>
+            <div class="tl-content">
+              <div class="tl-time">8:30 PM</div>
+              <div class="tl-text">Dinner at Hanumanthu Hotel</div>
+              <div class="tl-sub">Local Mysuru flavours, cosy and family-friendly</div>
+            </div>
+          </div>
+        </div>
+        <div class="day-transport">🚕 Local Taxi for all Mysuru sightseeing &nbsp;·&nbsp; Book for half/full day</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-card day-5" id="day5">
+    <div class="day-header" onclick="toggleDay('day5')">
+      <div class="day-number"><span class="num">D5</span><span class="label">Day 5</span></div>
+      <div class="day-info">
+        <div class="day-title">🏠 Mysuru Final Morning &amp; Return</div>
+        <div class="day-date">4 April 2026 · Saturday</div>
+        <div class="day-tags">
+          <span class="day-tag tag-sight">St Philomena's</span>
+          <span class="day-tag tag-travel">Train 12:45 PM</span>
+          <span class="day-tag tag-food">Vinayaka Mylari</span>
+        </div>
+      </div>
+      <div class="day-chevron">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="day-body-inner">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot">☕</div>
+            <div class="tl-content">
+              <div class="tl-time">8:00 AM</div>
+              <div class="tl-text">Breakfast at Depth N Green</div>
+              <div class="tl-sub">Healthy and fresh options, great for a travel day</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">⛪</div>
+            <div class="tl-content">
+              <div class="tl-time">9:30 AM</div>
+              <div class="tl-text">St Philomena's Church</div>
+              <div class="tl-sub">Neo-Gothic architecture — stunning for photos</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🍳</div>
+            <div class="tl-content">
+              <div class="tl-time">11:00 AM</div>
+              <div class="tl-text">Early lunch at Vinayaka Mylari</div>
+              <div class="tl-sub">One last dose of Mysuru dosa before departure!</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🚆</div>
+            <div class="tl-content">
+              <div class="tl-time">12:00 PM</div>
+              <div class="tl-text">Head to Mysuru Railway Station</div>
+              <div class="tl-sub">Reach by 12:00 noon – train departs 12:45 PM</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot">🏠</div>
+            <div class="tl-content">
+              <div class="tl-time">12:45 PM</div>
+              <div class="tl-text">Train 16315 – Mysuru to Trivandrum</div>
+              <div class="tl-sub">Overnight journey back home ⚠️ WL ticket — keep checking</div>
+            </div>
+          </div>
+        </div>
+        <div class="day-transport" style="background: var(--blue-pale)">🏠 Homebound · Overnight train to Trivandrum</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TRANSPORT -->
+
+<section id="transport">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">🚕 Getting Around</div>
+      <h2 class="section-title">Local Transport</h2>
+      <p class="section-desc">Mix of taxis and metro keeps travel smooth and cost-effective.</p>
+    </div>
+    <div class="transport-cards reveal">
+      <div class="transport-row">
+        <div class="tr-icon taxi">🚕</div>
+        <div class="tr-route">Yesvantpur Station → Hotel</div>
+        <div class="tr-detail">8 km · ~25 min<br>Taxi / Ola / Uber</div>
+      </div>
+      <div class="transport-row">
+        <div class="tr-icon metro">🚇</div>
+        <div class="tr-route">Hotel → Cubbon Park</div>
+        <div class="tr-detail">Metro Purple Line<br>Efficient &amp; cheap</div>
+      </div>
+      <div class="transport-row">
+        <div class="tr-icon metro">🚇</div>
+        <div class="tr-route">Palace → Lalbagh Garden</div>
+        <div class="tr-detail">Metro Purple + Green<br>Smooth transfer</div>
+      </div>
+      <div class="transport-row">
+        <div class="tr-icon taxi">🚕</div>
+        <div class="tr-route">Hotel → Bannerghatta</div>
+        <div class="tr-detail">22 km · ~1 hr<br>Book full-day taxi</div>
+      </div>
+      <div class="transport-row">
+        <div class="tr-icon taxi">🚕</div>
+        <div class="tr-route">All Mysuru Sightseeing</div>
+        <div class="tr-detail">Palace · Zoo · Brindavan<br>Half-day taxi</div>
+      </div>
+      <div class="transport-row">
+        <div class="tr-icon metro">🚇</div>
+        <div class="tr-route">Bengaluru City Travel</div>
+        <div class="tr-detail">Namma Metro<br>Fastest option</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FOOD -->
+
+<section id="food">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">🍽️ Food Highlights</div>
+      <h2 class="section-title">Must-Eat Restaurants</h2>
+      <p class="section-desc">Karnataka's legendary breakfast spots, meals joints &amp; more.</p>
+    </div>
+    <div class="food-grid reveal">
+      <div class="food-card">
+        <div class="food-emoji">🥞</div>
+        <div class="food-name">CTR</div>
+        <div class="food-meal">Breakfast · BLR</div>
+        <div class="food-note">Benne Masala Dosa &amp; filter coffee – a BLR institution</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🍛</div>
+        <div class="food-name">MTR</div>
+        <div class="food-meal">Lunch · BLR</div>
+        <div class="food-note">Est. 1924. Traditional South Indian thali – unmissable</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🌶️</div>
+        <div class="food-name">Nagarjuna</div>
+        <div class="food-meal">Dinner · BLR</div>
+        <div class="food-note">Andhra meals, full thali, finger-licking spicy</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🍌</div>
+        <div class="food-name">RRR</div>
+        <div class="food-meal">Lunch · Mysuru</div>
+        <div class="food-note">Classic Mysuru meal on banana leaf – great value</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🫓</div>
+        <div class="food-name">Mylari Hotel</div>
+        <div class="food-meal">Breakfast · Mysuru</div>
+        <div class="food-note">Famous for soft, buttery neer dosa – a Mysuru legend</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">✈️</div>
+        <div class="food-name">Airlines Hotel</div>
+        <div class="food-meal">Breakfast · BLR</div>
+        <div class="food-note">Idli, Vada, Kesari Bath – quintessential BLR morning</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BOOKINGS -->
+
+<section id="bookings">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">🎟️ Confirmed Bookings</div>
+      <h2 class="section-title">Your Reservations</h2>
+      <p class="section-desc">Safari is confirmed. Keep an eye on the WL train ticket.</p>
+    </div>
+    <div class="bookings-grid reveal">
+      <div class="booking-card safari">
+        <div class="booking-status status-confirmed">✅ Confirmed</div>
+        <div class="booking-title">🦁 Bannerghatta Safari</div>
+        <div class="booking-detail">🗓️ 2 April 2026</div>
+        <div class="booking-detail">⏰ Slot: 11:00 AM – 12:00 PM</div>
+        <div class="booking-detail">📋 Report by: 10:45 AM sharp</div>
+        <div class="booking-detail">👥 4 Pax: 2 Adults + 2 Children</div>
+        <div class="booking-detail">📍 Bannerghatta National Park, 22 km S of BLR</div>
+      </div>
+      <div class="booking-card train">
+        <div class="booking-status status-confirmed">✅ Confirmed</div>
+        <div class="booking-title">🚆 Train Tickets</div>
+        <div class="booking-detail">✅ 12258 TVCN→YPR · 30 Mar</div>
+        <div class="booking-detail">✅ 12785 SBC→MYS · 3 Apr</div>
+        <div class="booking-detail" style="color:#856404">⚠️ 16315 MYS→TVCN · WL</div>
+        <div class="booking-detail" style="margin-top:0.5rem">💡 Check IRCTC app daily for WL status update</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TIPS -->
+
+<section id="tips">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">💡 Travel Tips</div>
+      <h2 class="section-title">Pro Tips for Your Trip</h2>
+      <p class="section-desc">Small things that make a big difference when travelling with kids.</p>
+    </div>
+    <div class="tips-grid reveal">
+      <div class="tip-item"><span class="tip-icon">🚇</span> Use Namma Metro for BLR city travel — much faster than road during peak hours and kids enjoy the ride!</div>
+      <div class="tip-item"><span class="tip-icon">🦁</span> Start Bannerghatta day early. Report at 10:45 AM for the safari — latecomers may miss their slot.</div>
+      <div class="tip-item"><span class="tip-icon">💧</span> Carry sufficient water &amp; snacks for kids. Safari &amp; zoo days are long — pack light bites.</div>
+      <div class="tip-item"><span class="tip-icon">🚕</span> Book a full-day taxi for Bannerghatta and Mysuru. Cheaper than multiple rides &amp; more convenient with luggage.</div>
+      <div class="tip-item"><span class="tip-icon">🕐</span> Reach railway stations 45 minutes before departure. Bengaluru stations can be busy.</div>
+      <div class="tip-item"><span class="tip-icon">📱</span> Monitor the WL return ticket on IRCTC daily. Set SMS alerts for status change.</div>
+      <div class="tip-item"><span class="tip-icon">🌤️</span> April in BLR can be hot (30–34°C). Light cotton clothes + sunscreen for outdoor days.</div>
+      <div class="tip-item"><span class="tip-icon">📸</span> Mysuru Palace lights up on Sundays &amp; public holidays (7:00–7:45 PM). Plan if your visit falls on Sunday!</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CHECKLIST & SAFETY -->
+
+<section id="checklist">
+  <div class="container">
+
+```
+<!-- Header -->
+<div class="reveal">
+  <div class="section-label">🎒 Pre-Trip Prep</div>
+  <h2 class="section-title">Checklist, Packing &amp; Safety</h2>
+  <p class="section-desc">Everything you need to pack, know, and keep in mind for a smooth family trip.</p>
+</div>
+
+<!-- ⚠️ WL Warning Alert -->
+<div class="reveal">
+  <div class="alert-box warning">
+    <div class="alert-icon">⚠️</div>
+    <div class="alert-content">
+      <div class="alert-title">Return Ticket on Waitlist — Action Required</div>
+      <div class="alert-text">Train 16315 MYS→TVCN on 4 Apr is currently on waitlist. Monitor IRCTC daily and book a backup if not confirmed by 2 Apr.</div>
+      <div class="alert-options">
+        <span class="alert-option-pill">🚌 KSRTC Bus (Mysuru–TVM)</span>
+        <span class="alert-option-pill">⚡ Tatkal Booking</span>
+        <span class="alert-option-pill">📱 Check IRCTC App Daily</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Packing Progress -->
+<div class="checklist-progress reveal" id="packing-progress-bar">
+  <span style="font-size:1.2rem">🧳</span>
+  <div class="progress-bar-wrap">
+    <div class="progress-bar-fill" id="progress-fill"></div>
+  </div>
+  <span class="progress-text" id="progress-text">0 / 25 packed</span>
+</div>
+
+<!-- Packing Accordions -->
+<div class="cl-grid reveal">
+
+  <!-- Clothing -->
+  <div class="cl-accordion open" id="cl-clothing">
+    <div class="cl-acc-header" onclick="toggleAccordion('cl-clothing')">
+      <div class="cl-acc-icon clothing">👕</div>
+      <div class="cl-acc-title">Clothing</div>
+      <span class="cl-acc-count">4 items</span>
+      <span class="cl-acc-chev">▼</span>
+    </div>
+    <div class="cl-acc-body">
+      <div class="cl-acc-inner">
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Light cotton clothes (warm weather)</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">One light jacket (train AC / early mornings)</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Comfortable walking shoes</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Extra clothes for kids (2 sets)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Essentials -->
+  <div class="cl-accordion" id="cl-essentials">
+    <div class="cl-acc-header" onclick="toggleAccordion('cl-essentials')">
+      <div class="cl-acc-icon essentials">🧴</div>
+      <div class="cl-acc-title">Essentials Kit</div>
+      <span class="cl-acc-count">5 items</span>
+      <span class="cl-acc-chev">▼</span>
+    </div>
+    <div class="cl-acc-body">
+      <div class="cl-acc-inner">
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Sunscreen (SPF 50+)</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Caps / hats for everyone</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Wet wipes &amp; tissues</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Hand sanitizer</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Basic toiletries &amp; personal care</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Medical -->
+  <div class="cl-accordion" id="cl-medical">
+    <div class="cl-acc-header" onclick="toggleAccordion('cl-medical')">
+      <div class="cl-acc-icon medical">💊</div>
+      <div class="cl-acc-title">Medical Kit</div>
+      <span class="cl-acc-count">5 items</span>
+      <span class="cl-acc-chev">▼</span>
+    </div>
+    <div class="cl-acc-body">
+      <div class="cl-acc-inner">
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Paracetamol (adult &amp; kids dose)</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">ORS packets</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Motion sickness tablets</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Band-aids &amp; antiseptic</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Personal medications</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kids -->
+  <div class="cl-accordion" id="cl-kids">
+    <div class="cl-acc-header" onclick="toggleAccordion('cl-kids')">
+      <div class="cl-acc-icon kids">🎒</div>
+      <div class="cl-acc-title">Kids Items</div>
+      <span class="cl-acc-count">4 items</span>
+      <span class="cl-acc-chev">▼</span>
+    </div>
+    <div class="cl-acc-body">
+      <div class="cl-acc-inner">
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Small backpack for each kid</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Snacks (biscuits, dry fruits, bars)</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Water bottles (reusable)</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Toys / activity &amp; colouring books</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Electronics -->
+  <div class="cl-accordion" id="cl-electronics">
+    <div class="cl-acc-header" onclick="toggleAccordion('cl-electronics')">
+      <div class="cl-acc-icon electronics">🔌</div>
+      <div class="cl-acc-title">Electronics</div>
+      <span class="cl-acc-count">4 items</span>
+      <span class="cl-acc-chev">▼</span>
+    </div>
+    <div class="cl-acc-body">
+      <div class="cl-acc-inner">
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Power bank (10,000 mAh+)</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Phone chargers (all devices)</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Earphones / headphones</span></div>
+        <div class="cl-item" onclick="toggleCheck(this)"><div class="cl-checkbox"></div><span class="cl-label">Download offline Google Maps for BLR &amp; MYS</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /cl-grid -->
+
+<!-- Safety Tips in Cards -->
+<div style="margin-top: 2.5rem;" class="reveal">
+  <div class="section-label" style="margin-bottom:0.5rem">🛡️ Safety &amp; Precautions</div>
+  <h3 style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--midnight);margin-bottom:1.25rem">On-Trip Guidelines</h3>
+</div>
+
+<div class="safety-grid reveal">
+  <div class="safety-card">
+    <div class="safety-card-header">
+      <span class="safety-card-icon">🚆</span>
+      <span class="safety-card-title">Train Travel</span>
+    </div>
+    <ul class="safety-list">
+      <li>Keep tickets &amp; ID ready (digital + printed)</li>
+      <li>Carry a chain lock for luggage security</li>
+      <li>Pack night essentials in a separate bag</li>
+      <li>Don't leave valuables unattended</li>
+      <li>Keep slippers handy for overnight journey</li>
+    </ul>
+  </div>
+
+  <div class="safety-card">
+    <div class="safety-card-header">
+      <span class="safety-card-icon">🏨</span>
+      <span class="safety-card-title">Hotel Stay</span>
+    </div>
+    <ul class="safety-list">
+      <li>Request early luggage drop on arrival day</li>
+      <li>Save hotel contact in your phone</li>
+      <li>Lock valuables inside luggage</li>
+      <li>Take photo of room key card number</li>
+      <li>Know the hotel address in Kannada for taxi</li>
+    </ul>
+  </div>
+
+  <div class="safety-card">
+    <div class="safety-card-header">
+      <span class="safety-card-icon">🦁</span>
+      <span class="safety-card-title">Safari Day</span>
+    </div>
+    <ul class="safety-list">
+      <li>Reach Bannerghatta 30 minutes before slot</li>
+      <li>Carry water, caps &amp; snacks in a bag</li>
+      <li>Follow all park instructions strictly</li>
+      <li>No loud noises or unsafe movements</li>
+      <li>Keep kids close at all times in the park</li>
+    </ul>
+  </div>
+
+  <div class="safety-card">
+    <div class="safety-card-header">
+      <span class="safety-card-icon">🌞</span>
+      <span class="safety-card-title">Weather &amp; Health</span>
+    </div>
+    <ul class="safety-list">
+      <li>Stay well-hydrated throughout the day</li>
+      <li>Avoid outdoor walks 12–3 PM (peak sun)</li>
+      <li>Apply sunscreen every 2–3 hours outdoors</li>
+      <li>Schedule rest breaks for kids post lunch</li>
+      <li>Seek shade during outdoor sightseeing</li>
+    </ul>
+  </div>
+
+  <div class="safety-card">
+    <div class="safety-card-header">
+      <span class="safety-card-icon">🍽️</span>
+      <span class="safety-card-title">Food Safety</span>
+    </div>
+    <ul class="safety-list">
+      <li>Prefer clean, established restaurants</li>
+      <li>Avoid street food during afternoon heat</li>
+      <li>Always carry personal water bottles</li>
+      <li>Adjust spice levels when ordering for kids</li>
+      <li>Wash hands before all meals</li>
+    </ul>
+  </div>
+
+  <div class="safety-card">
+    <div class="safety-card-header">
+      <span class="safety-card-icon">🚨</span>
+      <span class="safety-card-title">Emergency &amp; Backup</span>
+    </div>
+    <ul class="safety-list">
+      <li>Emergency number: <strong>112</strong></li>
+      <li>Share live location with family at home</li>
+      <li>Carry ₹2,000–3,000 cash backup</li>
+      <li>Note nearest hospital to each hotel</li>
+      <li>Keep all booking PDFs downloaded offline</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Transport Tips -->
+<div class="reveal">
+  <div class="transport-tips-grid" style="margin-top:1.5rem">
+    <div class="transport-tip-card">
+      <div class="tt-header">
+        <span class="tt-icon">🚇</span>
+        <span class="tt-title">Metro (BLR)</span>
+        <span class="tt-badge badge-rec">✓ Recommended</span>
+      </div>
+      <ul class="safety-list">
+        <li>Best for Cubbon Park &amp; MG Road</li>
+        <li>Avoid peak hours: 9–11 AM, 5–7 PM</li>
+        <li>Cheap, fast, and kids love it</li>
+      </ul>
+    </div>
+    <div class="transport-tip-card">
+      <div class="tt-header">
+        <span class="tt-icon">🚕</span>
+        <span class="tt-title">Taxi (Uber / Ola)</span>
+        <span class="tt-badge badge-rec">✓ Best for family</span>
+      </div>
+      <ul class="safety-list">
+        <li>Best for Bannerghatta trip (22 km)</li>
+        <li>Ideal for Mysuru local sightseeing</li>
+        <li>Use when travelling with luggage</li>
+        <li>Book full-day for ₹1,200–1,500</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Smart Tips Highlight Box -->
+<div class="smart-tips-box reveal" style="margin-top:1.5rem">
+  <div class="st-title">🎯 Smart Travel Tips</div>
+  <div class="smart-tips-list">
+    <div class="st-item"><div class="st-dot"></div>Start early, finish early — avoid afternoon heat and crowds</div>
+    <div class="st-item"><div class="st-dot"></div>Keep one day backpack packed with essentials at all times</div>
+    <div class="st-item"><div class="st-dot"></div>Check Google Maps traffic before every departure</div>
+    <div class="st-item"><div class="st-dot"></div>Keep kids engaged with activity books to avoid fatigue on long rides</div>
+    <div class="st-item"><div class="st-dot"></div>Carry photo ID for both adults during all sightseeing</div>
+    <div class="st-item"><div class="st-dot"></div>Take turns carrying the day bag — share the load!</div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-title">Bengaluru &amp; Mysuru Family Trip 🌟</div>
+  <p>30 March – 5 April 2026 &nbsp;·&nbsp; 2 Adults + 2 Kids</p>
+  <p style="margin-top:0.5rem">Have a wonderful trip! 🚆🦁🏰</p>
+</footer>
+
+<script>
+  // Toggle day expand/collapse
+  function toggleDay(id) {
+    const card = document.getElementById(id);
+    card.classList.toggle('open');
+  }
+
+  // Checklist accordion
+  function toggleAccordion(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  // Checkbox toggle + progress
+  const TOTAL_ITEMS = 25; // 4+5+5+4+4 = 22 packing + extras
+
+  function updateProgress() {
+    const total = document.querySelectorAll('.cl-item').length;
+    const checked = document.querySelectorAll('.cl-checkbox.checked').length;
+    const pct = total ? Math.round((checked / total) * 100) : 0;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-text').textContent = checked + ' / ' + total + ' packed';
+  }
+
+  function toggleCheck(item) {
+    const box = item.querySelector('.cl-checkbox');
+    box.classList.toggle('checked');
+    item.classList.toggle('done');
+    updateProgress();
+  }
+
+  // Init progress
+  updateProgress();
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(r => observer.observe(r));
+
+  // Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-item');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => navObserver.observe(s));
+</script>
+
+</body>
+</html>
